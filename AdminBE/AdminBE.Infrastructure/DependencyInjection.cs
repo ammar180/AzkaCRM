@@ -1,4 +1,5 @@
 ﻿using AdminBE.Application.RepositoryInterfaces;
+using AdminBE.Domain;
 using AdminBE.Infrastructure.EFContext;
 using AdminBE.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -11,9 +12,13 @@ public static class DependencyInjection
 {
   public static IServiceCollection AddInfrastructure(
       this IServiceCollection services,
-      IConfiguration configuration) =>
-      services
-          .AddDatabase(configuration);
+      IConfiguration configuration)
+  {
+    services.AddScoped<IStudentRepository, StudentRepository>();
+    services.AddDatabase(configuration);
+
+    return services; // Registering the database context and repositories
+  }
 
   private static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
   {

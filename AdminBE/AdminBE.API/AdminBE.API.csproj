@@ -7,12 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore"/>
+    <PackageReference Include="Swashbuckle.AspNetCore" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\ResponseModels\" />
     <Folder Include="Models\RequestsModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdminBE.Application\AdminBE.Application.csproj" />
   </ItemGroup>
 
 </Project>

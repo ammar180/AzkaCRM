@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="EFContext\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
